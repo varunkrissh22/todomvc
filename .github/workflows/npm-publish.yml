@@ -50,6 +50,10 @@ jobs:
          
        - name: Publish
          run: jf npm publish
+       - name: Show npm publish debug log
+         if: failure()
+         run: cat ~/.npm/_logs/*.log
+
          
        - name: Publish Build info With JFrog CLI
          run: |
